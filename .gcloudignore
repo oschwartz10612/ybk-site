@@ -15,7 +15,3 @@
 
 # Node.js dependencies:
 node_modules/
-
-#sensitive data
-config/keys.js
-app.yaml
