@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Inspiration
+  </title>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <% include ../partials/navbar %>
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="card mb-4">
+      <div class="card-header">
+        2020 Theme Inspiration
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Add any theme inspiration below...</h5>
+        <p class="card-text">Edit the Google Slides to add what you find. Take snapshots of what you find online, or take pictures with your phones and add them in. Make a new slide for each new set of ideas. Feel free to comment (nicely) on other people's ideas! Turn in when you are done!</p>
+        <iframe frameborder="0" src="https://docs.google.com/a/fcpsschools.net/presentation/d/e/2PACX-1vQlDA_tN94wu-WGIfx4E8nx10_LwKr9XlqQ0cVagsaeRxcC7pb1dCPJB5zawhqDqppDkWQwqN0rmKVI/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <br>
+        <a href="https://docs.google.com/presentation/d/1w3fDgyGhNgtskhNZ7qsGZY26QcDkZcV5uBnKgTWKEeY/edit?usp=sharing" class="btn btn-primary mt-4" target="_blank">Edit Theme Inspiration</a>
+        <hr>
+        <form class="form-row" action="/profile/form" method="post">
+          <input type="hidden" name="table" value="assignments">
+          <input type="hidden" name="name" value="<%=user.name%>">
+          <% if(typeof data != 'undefined' && data.inspiration_theme == 'done') { %>
+              <div class="col-auto my-1">
+                <input type="hidden" name="inspiration_theme" value="unsubmitted">
+                <button type="submit" class="btn btn-danger">Unsubmit</button>
+              </div>
+          <% } else {%>
+            <div class="col-auto my-1">
+              <input type="hidden" name="inspiration_theme" value="done">
+              <button type="submit" class="btn btn-warning">Turn in</button>
+            </div>
+          <% } %>
+        </form>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        2020 Design Inspiration
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Add any design inspiration below...</h5>
+        <p class="card-text">Same as above.</p>
+        <iframe frameborder="0" src="https://docs.google.com/a/fcpsschools.net/presentation/d/e/2PACX-1vRjoQa6bPJQl3uHfHg77VeUmtBf9FM0U-DuwGdolPcPaZ36-reCfh7eQ2VvxglcJ4Ab5gdX47AJSbQp/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <br>
+        <a href="https://docs.google.com/presentation/d/1fBL2mCzz87Lq1uSMaUGLlQrSd-t7d4fRbB7HktiITts/edit?usp=sharing" class="btn btn-primary mt-4" target="_blank">Edit Design Inspiration</a>
+        <hr>
+        <form class="form-row" action="/profile/form" method="post">
+          <input type="hidden" name="table" value="assignments">
+          <input type="hidden" name="name" value="<%=user.name%>">
+          <% if(typeof data != 'undefined' && data.inspiration_design == 'done') { %>
+              <div class="col-auto my-1">
+                <input type="hidden" name="inspiration_design" value="unsubmitted">
+                <button type="submit" class="btn btn-danger">Unsubmit</button>
+              </div>
+          <% } else {%>
+            <div class="col-auto my-1">
+              <input type="hidden" name="inspiration_design" value="done">
+              <button type="submit" class="btn btn-warning">Turn in</button>
+            </div>
+          <% } %>
+        </form>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>

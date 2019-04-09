@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Dashboard
+  </title>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <% include ../partials/navbar %>
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="card mb-4">
+      <div class="card-header">
+        Welcome!
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Welcome to the 2020 Above and Beyond website,
+          <%=user.name%>!</h5>
+        <p class="card-text">Everything from assignments to resources will be posted here. This Google account will be your login for the year.</p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        2020 Design and Theme Inspiration
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Contribute to theme and design inspiration</h5>
+        <p class="card-text">Edit the Google Slides to add what you find. Take snapshots of what you find oniline, or take pictures with your phones and add them in. Make a new slide for each new set of ideas. Feel free to comment (nicely) on other
+          people's ideas!</p>
+        <a href="/profile/inspiration" class="btn btn-primary">Lets go!</a>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        Editorial Staff
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Editors for this year:</h5>
+        <iframe frameborder="0" width="100%" height="800" src="https://docs.google.com/a/fcpsschools.net/document/d/e/2PACX-1vQ15V5zh1EiYm0VbUc78FdJb1q__Ct2uvd4wpIApEBOw1qAUE3R2jY9sEYTcf9vnFwkKpLmYSYZ8kWA/pub?embedded=true"></iframe>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        Roles
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Ms. Forte has drafted staff roles for us</h5>
+        <iframe frameborder="0" src="https://drive.google.com/file/d/10k2x_xBBJRJN-EkK4huuyUjGRZuYADNf/preview" width="100%" height="500"></iframe>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>

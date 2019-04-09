@@ -1,0 +1,71 @@
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">AB Yearbook</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <% if (!user) { %>
+          <a href="/auth/google"><img src="/img/btn_google_signin_dark_normal_web@2x.png" width="200"></a>
+          <% } else { %>
+          <a class="nav-link" href="/auth/logout">Sign out</a>
+          <% } %>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link <%= typeof dashboard!='undefined' ? 'active' : '' %>" href="/profile/">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <% if (typeof user != 'undefined' && user.role == 'admin') { %>
+              <li class="nav-item">
+                <a class="nav-link <%= typeof admin!='undefined' ? 'active' : '' %>" href="/admin/">
+                  <span data-feather="home"></span>
+                  Admin <span class="sr-only"></span>
+                </a>
+              </li>
+              <% } %>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Current Assignments</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link <%= typeof inspiration!='undefined' ? 'active' : '' %>" href="/profile/inspiration">
+                  <span data-feather="file-text"></span>
+                  Inspiration
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Resources</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link <%= typeof calendar!='undefined' ? 'active' : '' %>" href="/profile/calendar">
+                  <span data-feather="file-text"></span>
+                  Calendar
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <%= typeof roster!='undefined' ? 'active' : '' %>" href="/profile/roster">
+                  <span data-feather="file-text"></span>
+                  Roster
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>

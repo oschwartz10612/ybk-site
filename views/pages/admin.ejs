@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Home
+  </title>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  <% include ../partials/navbar %>
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <h3>Assignments:</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-sm table-striped" id="team">
+      <thead>
+        <tr>
+          <%
+          const keys = Object.keys(data[0]);
+          for(var i = 1; i < keys.length; i++) {
+          %>
+          <th scope="col">
+            <%=keys[i]%>
+          </th>
+          <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <%
+        for (var u = 0; u < data.length; u++) {
+          var values = Object.values(data[u]);
+          for (var i = 1; i < values.length; i++) {
+          %>
+          <tr>
+            <% for (var i = 1; i < keys.length; i++) { %>
+            <td>
+              <%= values[i] %>
+            </td>
+            <% } %>
+          </tr>
+          <% }
+        } %>
+      </tbody>
+    </table>
+  </div>
+</main>
+</body>
+
+</html>
